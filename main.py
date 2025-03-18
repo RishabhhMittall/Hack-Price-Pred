@@ -21,7 +21,7 @@ expected_fields = [
 ]
 
 # Define a route for predictions
-@app.route("/predict", methods=["POST"])
+@app.route("/", methods=["POST"])
 def predict():
     try:
         # Get JSON data from the request
