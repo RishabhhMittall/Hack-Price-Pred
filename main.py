@@ -20,8 +20,13 @@ expected_fields = [
     "bmi", "club_position"
 ]
 
-# Define a route for predictions
-@app.route("/", methods=["POST"])
+# Root route for GET requests
+@app.route("/", methods=["GET"])
+def home():
+    return "Welcome to the Player Value Predictor API! Use a POST request to /predict to get predictions."
+
+# Prediction route for POST requests
+@app.route("/predict", methods=["POST"])
 def predict():
     try:
         # Get JSON data from the request
